@@ -53,8 +53,20 @@ Therefore, the code have to be easy to read and understand the algorithm.
 Programming language, Python\cite{python} is adopted in this project because it has good code readability and it allows us to focus on algorithm itself.
 
 The algorithms which is widely used in academia and industry and practical are selected.
-For example, Kalman filters for localization
+For example, Kalman filters and particle filter for localization, grid mapping for mapping, dynamic programming based approaches and sampling based approaches for path planning, and optimal control based approach for path tracking.
 
+Each sample code only depends some standard modules on Python 3.x
+
+\begin{itemize}
+ \item Python 3.6.x
+ \item numpy
+ \item scipy
+ \item matplotlib
+ \item pandas
+ \item cvxpy 0.4.x
+\end{itemize}
+
+Easy to read for understanding each algorithm's basic idea.
 
 \section{Repository structure}
 
@@ -72,12 +84,24 @@ For example, Kalman filters for localization
 %------------------------------------------------------------------------- 
 \section{Conclusion and future work}
 
+In this paper, I introduced an OSS which is a Python code collection of robotics algorithms, especially for autonomous navigation. Related works of this project, some key ideas about this OSS project, and brief structure of this repository were described. 
+
+The future works of this project is as followed: 
+
+\begin{itemize}
+ \item Technical and mathematical documentation with Jupyter notebook\cite{JupyterNotebook}.  
+ \item Simple image processing samples for autonomous navigation only using OpenCV\cite{opencv}.
+ \item Simple multi-robots simulations.
+\end{itemize}
+
+If readers were interested in these future projects, contributions are welcome.
+
 
 
 %------------------------------------------------------------------------
 \section{Acknowledgments}
 
-I appreciate contributors: Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, and Antonin RAFFIN\cite{auther4}. This is my GitHub account\cite{auther5}
+I appreciate all contributors: Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, Antonin RAFFIN\cite{auther4}, and Alexis Paques\cite{auther6}. This is my GitHub account\cite{auther5}
 
 \bibliography{egbib}
 \end{document}
