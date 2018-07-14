@@ -59,8 +59,9 @@ These libraries also allows us to focus on algorithm itself.
 The second one is the algorithms which is widely used in academia and industry and practical are selected.
 For example, Kalman filters and particle filter for localization, grid mapping for mapping, dynamic programming based approaches and sampling based approaches for path planning, and optimal control based approach for path tracking.
 
-The third philosophy is minimum dependency.
-Each sample code only depends some modules on Python3.
+The last philosophy is minimum dependency.
+It allows us to use the codes easily and to convert the codes to other programming languages such as C++, Java for practical usage.
+Each sample code only depends some modules on Python3 as bellows.
 
 \begin{itemize}
  \item numpy\cite{numpy} for matrix operation
@@ -70,10 +71,28 @@ Each sample code only depends some modules on Python3.
  \item cvxpy 0.4.x\cite{cvxpy} for convex optimization
 \end{itemize}
 
+These modules are OSS and could be used for free. This repository doesn't include any commercial software.
+
 
 \section{Repository structure}
 
+In this section, the brief structure of this project is described.
+
+This repository has five directories which means five technical categories in autonomous navigation, Localization, Mapping, SLAM, Path planning, and Path tracking. Each directory includes several directories which has each sample code with different algorithms.
+
+In the following subsections, some algorithms and some simulation examples described.
+
 \subsection{Localization}
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/localization1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/eg1_2up.png}}}\\
+Histogram filter&(b)
+\end{tabular}
+\caption{Localization simulation results}
+\label{fig:teaser}
+\end{figure}
 
 \subsection{Mapping}
 
