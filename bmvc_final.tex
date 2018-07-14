@@ -47,26 +47,29 @@ This paper describes an Open Source Software(OSS): PythonRobotics\cite{github}.T
 
 \section{Philosophy}
 In this section, the philosophy of this project is described.
+This project based on three philosophies.
 
+The first one is that the codes have to be easy to read for understanding each algorithm's basic idea.
 This project aims for beginners of robotics to understand basic ideas of each algorithm. 
 Therefore, the code have to be easy to read and understand the algorithm.
 Programming language, Python\cite{python} is adopted in this project because it has good code readability and it allows us to focus on algorithm itself.
+Python has great libraries for matrix operation, mathematical and scientific operation, and visualization.
+These libraries also allows us to focus on algorithm itself.
 
-The algorithms which is widely used in academia and industry and practical are selected.
+The second one is the algorithms which is widely used in academia and industry and practical are selected.
 For example, Kalman filters and particle filter for localization, grid mapping for mapping, dynamic programming based approaches and sampling based approaches for path planning, and optimal control based approach for path tracking.
 
-Each sample code only depends some standard modules on Python 3.x
+The third philosophy is minimum dependency.
+Each sample code only depends some modules on Python3.
 
 \begin{itemize}
- \item Python 3.6.x
- \item numpy
- \item scipy
- \item matplotlib
- \item pandas
- \item cvxpy 0.4.x
+ \item numpy\cite{numpy} for matrix operation
+ \item scipy\cite{scipy} for mathematics, science, and engineering computing
+ \item matplotlib\cite{matplotlib} for visualization
+ \item pandas\cite{pandas} for data analysis
+ \item cvxpy 0.4.x\cite{cvxpy} for convex optimization
 \end{itemize}
 
-Easy to read for understanding each algorithm's basic idea.
 
 \section{Repository structure}
 
