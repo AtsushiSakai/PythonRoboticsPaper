@@ -68,7 +68,7 @@ Each sample code only depends some modules on Python3 as bellows.
  \item scipy\cite{scipy} for mathematics, science, and engineering computing
  \item matplotlib\cite{matplotlib} for visualization
  \item pandas\cite{pandas} for data analysis
- \item cvxpy 0.4.x\cite{cvxpy} for convex optimization
+ \item cvxpy\cite{cvxpy} for convex optimization
 \end{itemize}
 
 These modules are OSS and could be used for free. This repository doesn't include any commercial software.
@@ -84,17 +84,32 @@ In the following subsections, some algorithms and some simulation examples descr
 
 \subsection{Localization}
 
+Localization is an ability of a robot to know it's position and orientation with sensors.
+In localization, Bayesian Filters such as Kalman filters, histogram filter, and particle filter are widely used\cite{PR}.
+This repository includes some sample codes using these algorithms.
+Fig.\ref{fig:localization} shows localization simulation results using histogram filter ans particle filter.
+
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/localization1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/eg1_2up.png}}}\\
-Histogram filter&(b)
+\bmvaHangBox{\fbox{\includegraphics[width=5.9cm]{images/localization1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.2cm]{images/localization2.png}}}\\
+Histogram filter&Particle filter
 \end{tabular}
 \caption{Localization simulation results}
-\label{fig:teaser}
+\label{fig:localization}
 \end{figure}
 
 \subsection{Mapping}
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/mapping1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.7cm]{images/mapping2.png}}}\\
+Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
+\end{tabular}
+\caption{Mapping simulation results}
+\label{fig:localization}
+\end{figure}
 
 \subsection{SLAM}
 
