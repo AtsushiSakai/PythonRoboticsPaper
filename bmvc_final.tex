@@ -84,10 +84,10 @@ In the following subsections, some algorithms and some simulation examples descr
 
 \subsection{Localization}
 
-Localization is an ability of a robot to know it's position and orientation with sensors.
+Localization is an ability of a robot to know it's position and orientation with sensors such as GNSS and IMU.
 In localization, Bayesian Filters such as Kalman filters, histogram filter, and particle filter are widely used\cite{PR}.
 This repository includes some sample codes using these algorithms.
-Fig.\ref{fig:localization} shows localization simulation results using histogram filter ans particle filter.
+Fig.\ref{fig:localization} shows localization simulation results using histogram filter and particle filter.
 
 \begin{figure}
 \begin{tabular}{cc}
@@ -100,6 +100,11 @@ Histogram filter&Particle filter
 \end{figure}
 
 \subsection{Mapping}
+Mapping is an ability of a robot to understand surroundings with sensors such as LIDAR and imaging sensor.
+Robots have to recognize obstacle positions and it' shape for obstacle avoidance.
+In mapping, Grid map, machine learning algorithms are widely used\cite{PR}\cite{PRML}.
+This repository includes some sample codes using these algorithms.
+Fig.\ref{fig:mapping} shows mapping simulation results using Grid mapping with 2D ray casting and 2D object clustering with k-means algorithm.
 
 \begin{figure}
 \begin{tabular}{cc}
@@ -108,10 +113,20 @@ Histogram filter&Particle filter
 Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
 \end{tabular}
 \caption{Mapping simulation results}
-\label{fig:localization}
+\label{fig:mapping}
 \end{figure}
 
 \subsection{SLAM}
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/slam1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/slam2.png}}}\\
+Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
+\end{tabular}
+\caption{SLAM simulation results}
+\label{fig:slam}
+\end{figure}
 
 \subsection{Path planning}
 
