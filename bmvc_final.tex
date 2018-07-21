@@ -117,6 +117,11 @@ Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
 \end{figure}
 
 \subsection{SLAM}
+Simultaneous Localization and Mapping: SLAM is an ability of a robot to estimate the pose of a robot and the map of the environment at the same time.
+SLAM problem is hard to solve, because a map is needed for localization and a good localization is needed for mapping, which is a kind of chicken and egg problem.
+Popular SLAM solution methods include the extended Kalman filter, particle filter, and Fast SLAM algorithm\cite{PR}.
+This repository includes some sample codes using these algorithms.
+Fig.\ref{slam} shows SLAM simulation results using extended kalman filter and results using FastSLAM2.0\cite{PR}.
 
 \begin{figure}
 \begin{tabular}{cc}
@@ -129,6 +134,16 @@ Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
 \end{figure}
 
 \subsection{Path planning}
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/pathplan1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/pathplan2.png}}}\\
+Extended Kalman Filter based SLAM & path planning simulation with LQR-RRT*\cite{lqrrrt}
+\end{tabular}
+\caption{Path planning simulation results}
+\label{fig:slam}
+\end{figure}
 
 \subsection{Path tracking}
 
