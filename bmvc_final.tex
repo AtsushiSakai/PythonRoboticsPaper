@@ -17,7 +17,7 @@
 }
 
 
-\runninghead{arXiv}{Artificial Intelligence}
+\runninghead{arXiv}{Robotics, Artificial Intelligence}
 
 % Any macro definitions you would like to include
 % These are not defined in the style file, because they don't begin
@@ -152,6 +152,13 @@ Potential Field path planning & LQR-RRT* path planning\cite{lqrrrt}
 \end{figure}
 
 \subsection{Path tracking}
+Path tracking is an ability of a robot to follow the reference path from path planning algorithms.
+The role of the path tracking controller
+is to stabilize to the reference path or trajectory which has modeling error and other forms of uncertainty. 
+In path tracking, feedback control techniques and optimization based control techniques are widely used\cite{pathplanning}.
+This project includes some sample codes using these algorithms.
+Fig.\ref{fig:pathplan} shows Rear wheel feedback steering control and PID speed control and iterative linear model predictive path tracking control\cite{lqrrrt}.
+
 \begin{figure}
 \begin{tabular}{cc}
 \bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/path_tracking1.png}}}&
