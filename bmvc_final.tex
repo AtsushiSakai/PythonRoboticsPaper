@@ -65,15 +65,23 @@ This paper is organized as follows: Section 2 reviews the related works. The phi
 
 There are great references for learning autonomous navigation technologies.
 
-S. Thrun et al, wrote a great text book "Probabilistic robotics" which is a bible of localization, mapping, simultaneous localization and mapping (SLAM) for mobile robotics\cite{PR}.
-E. Frazzoli et al. wrote a survey paper about path planning and control for autonomous driving \cite{pathtracking}.
+S. Thrun et al. wrote a great text book "Probabilistic robotics" which is a bible of localization, mapping, simultaneous localization and mapping (SLAM) for mobile robotics\cite{PR}.
+E. Frazzoli et al. wrote a great survey paper about path planning and control techniques for autonomous driving \cite{pathtracking}.
 G. Bautista et al. wrote a survey paper focusing on path planning for automated vehicles\cite{pathplanning}.
-J. Levinson wrote an overview paper about systems and algorithms towards fully fully autonomous driving\cite{Levinson2011}.
+J. Levinson wrote an overview paper about systems and algorithms towards fully autonomous driving\cite{Levinson2011}.
 
-These papers helps readers to learn state of the arts autonomous technologies.
-However, it is difficult to understand the basic ideas of the technologies for beginners of robotics, because these papers doesn't include implementation examples such as sample codes.
+These papers helps readers to learn state of the arts autonomous navigation technologies.
+However, it might be difficult to understand the basic ideas of the technologies and algorithms for beginners of robotics, because these papers doesn't include implementation examples such as sample codes.
 
+Robot Operating System (ROS) is a middleware system for robotics software development\cite{ros}\cite{rospaper}.
+ROS initially released from 2007, it became a de facto standard platform in many industries fields not only academia.
+ROS includes basic navigation software such as Adaptive Monte Carlo Localization (AMCL package) and local path planner based on dynamic window approach\cite{rosnavigation}.
+Many autonomous navigation ROS packages are also opened as an OSS.
 
+The OSS are also useful to learn basic ideas of autonomous navigation algorithms.
+However, it might be difficult sometimes, because of lack of documentation about it's basic algorithm.
+Also, it might be written by complicated programming languages such as C++ for calculation performance and platform reasons.
+This is not good for focusing to learn robotics algorithms.
 
 Udacity Inc, which is a online learning company founded by S. Thrun, et al, is providing great online courses of autonomous navigation and autonomous driving \cite{udacity}.
 
