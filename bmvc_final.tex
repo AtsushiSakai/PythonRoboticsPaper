@@ -46,11 +46,11 @@ This paper describes an Open Source Software(OSS): PythonRobotics\cite{github}.T
 In recent years, autonomous navigation technologies have received a great deal of attention in many fields. 
 For examples, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
 An autonomous system is a system that can operate for long periods of time without any external control.
-To accomplish autonomous navigation, the system needs to know where am I (localization), where is safe (mapping), where to go (path planning), and how to go (control). 
-Autonomous navigation needs a wide range of technologies.
 
-
-
+The autonomous navigation needs a wide range of technologies.
+To accomplish autonomous navigation, the system needs to know where am I (localization), where is safe (mapping), where to go (path planning), and how to go (path following). 
+The autonomous system would not work correctly if any of of them is missing.
+These autonomous technologies needs different technological backgrounds such as linear algebra, statics, probability theory, optimization theory, control theory, and sensing physics etc. 
 
 However, there are 
 
@@ -73,19 +73,23 @@ J. Levinson wrote an overview paper about systems and algorithms towards fully a
 These papers helps readers to learn state of the arts autonomous navigation technologies.
 However, it might be difficult to understand the basic ideas of the technologies and algorithms for beginners of robotics, because these papers doesn't include implementation examples such as sample codes.
 
-Robot Operating System (ROS) is a middleware system for robotics software development\cite{ros}\cite{rospaper}.
+Robot Operating System (ROS) is a middleware for robotics software development\cite{ros}\cite{rospaper}.
 ROS initially released from 2007, it became a de facto standard platform in many industries fields not only academia.
 ROS includes basic navigation software such as Adaptive Monte Carlo Localization (AMCL package) and local path planner based on dynamic window approach\cite{rosnavigation}.
 Many autonomous navigation ROS packages are also opened as an OSS.
 
-The OSS are also useful to learn basic ideas of autonomous navigation algorithms.
+The OSS is also useful to learn basic ideas of autonomous navigation algorithms.
 However, it might be difficult sometimes, because of lack of documentation about it's basic algorithm.
 Also, it might be written by complicated programming languages such as C++ for calculation performance and platform reasons.
 This is not good for focusing to learn robotics algorithms.
 
 Udacity Inc, which is a online learning company founded by S. Thrun, et al, is providing great online courses of autonomous navigation and autonomous driving \cite{udacity}.
+This cource provide not only technical description, programming homework using Python.
+The learning strategy is great for understanding it's technical background.
 
-
+PythonRobotics project has a similar concept to the Udacity's course.
+It aims for beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm.
+The details of concepts of this OSS project will be described in the next section. 
 
 \section{Philosophy}
 In this section, the philosophy of this project is described.
