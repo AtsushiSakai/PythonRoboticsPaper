@@ -10,11 +10,42 @@
 % \addauthor{Name}{email/homepage}{INSTITUTION_CODE}
 \addauthor{Atsushi Sakai}{https://atsushisakai.github.io/}{1}
 
+\addauthor{Daniel Ingram}{ingramds@appstate.edu}{2}
+
+\addauthor{Joseph Dinius}{jdinius@inviarobotics.com}{3}
+
+\addauthor{Karan Chawla}{karan@skyryse.com}{4}
+
+\addauthor{Antonin Raffin}{antonin.raffin@ensta-paristech.fr}{5}
+
+\addauthor{Alexis Paques}{Alexis@unmanned.life}{6}
+
+
+
 % Enter the institutions
 % \addinstitution{Name\\Address}
 \addinstitution{
- University of California, Berkeley\\
- Berkeley, USA
+ University of California, Berkeley
+}
+
+\addinstitution{
+ Appalachian State University
+}
+
+\addinstitution{
+ inVia Robotics, Inc.
+}
+
+\addinstitution{
+ Skyryse Inc.
+}
+
+\addinstitution{
+ ENSTA ParisTech
+}
+
+\addinstitution{
+ Unmanned Life
 }
 
 
@@ -36,7 +67,13 @@
 \maketitle
 
 \begin{abstract}
-This paper describes an Open Source Software(OSS): PythonRobotics\cite{github}.This OSS is a Python code collection of robotics algorithms, especially focusing on autonomous navigation. It aims for beginners of robotics to understand basic ideas of each algorithm. The algorithms which is widely used in academia and industry and practical are selected. Each sample code only depends some standard modules on Python 3.x. In this paper, related works of this project, some key ideas about this OSS project, and brief structure of this repository are introduced. I also discuss future works of this project. 
+This paper describes an Open Source Software(OSS) project: PythonRobotics\cite{github}.
+This is a Python code collection of robotics algorithms, especially focusing on autonomous navigation.
+It aims for beginners of robotics to understand basic ideas of each algorithm.
+The algorithms which are practical and widely used in both academia and industry are selected.
+Each sample code in this project only depends some standard modules in Python 3 in order to easy to use and easy to understand the algorithm.
+In this paper, related works of this project, some key ideas about this OSS project, and brief structure of this repository are introduced.
+Future works of this project are also discussed. 
 
 \end{abstract}
 
@@ -51,7 +88,7 @@ The autonomous navigation needs a wide range of technologies.
 To accomplish autonomous navigation, the system needs to know where am I (localization), where is safe (mapping), where to go (path planning), and how to go (path following). 
 The autonomous system would not work correctly if any of of them is missing.
 
-Educational materials are becoming more and more important for futre developpers to learn basic autonomous navigation technologies.
+Educational materials are becoming more and more important for future developpers to learn basic autonomous navigation technologies.
 Because, these autonomous technologies needs different technological backgrounds such as linear algebra, statics, probability theory, optimization theory, control theory, and sensing physics etc. 
 It needs a lot of time to be familiar with these technological areas without good materials.
 
@@ -59,7 +96,7 @@ In this paper, an Open Source Software(OSS) project: PythonRobotics\cite{github}
 It aims for beginners of robotics to understand basic ideas of each algorithm.
 It is a code collection of robotics algorithms, especially focusing on autonomous navigation. It is written in Python\cite{python} under MIT license\cite{mit}. 
 
-This paper is organized as follows: Section 2 reviews the related works. The philosophy of this OSS is presented in Section 3. It's repository structure description and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. Section 6 shows acknowledgements for all contributors  in this project. The source code of this paper is provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
+This paper is organized as follows: Section 2 reviews the related works. The philosophy of this OSS is presented in Section 3. It's repository structure description and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. Section 6 shows acknowledgements for all contributors  in this project. The source code of this project is provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
 
 
 \section{Related works}
@@ -219,24 +256,25 @@ Rear wheel feedback steering control \\ and PID speed control \cite{pathtracking
 %------------------------------------------------------------------------- 
 \section{Conclusion and future work}
 
-In this paper, I introduced an OSS which is a Python code collection of robotics algorithms, especially for autonomous navigation. Related works of this project, some key ideas about this OSS project, and brief structure of this repository were described. 
+In this paper, I introduced an OSS project which is a Python code collection of robotics algorithms, especially for autonomous navigation.
+Related works of this project, some key ideas about this OSS project, and brief structure of this repository were described. 
 
-The future works of this project is as followed: 
+The future works of this project are as followed: 
 
 \begin{itemize}
- \item Technical and mathematical documentation with Jupyter notebook\cite{JupyterNotebook}.  
- \item Simple image processing samples for autonomous navigation only using OpenCV\cite{opencv}.
- \item Simple multi-robots simulations.
+ \item Adding technical and mathematical documentation using Jupyter notebook\cite{JupyterNotebook}.  
+ \item Adding simple image processing sample codes for autonomous navigation only using OpenCV\cite{opencv}.
+ \item Adding simple multi-robots simulations for autonomous navigation.
 \end{itemize}
 
 If readers were interested in these future projects, contributions are welcome.
-
-
+Readers can also support this project financially via Patreon\cite{patreon}.
 
 %------------------------------------------------------------------------
 \section{Acknowledgments}
 
-I appreciate all contributors: Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, Antonin RAFFIN\cite{auther4}, and Alexis Paques\cite{auther6}. This is my GitHub account\cite{auther5}
+We appreciate all contributors: Atsushi Sakai\cite{auther6}, Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, Antonin RAFFIN\cite{auther4}, and Alexis Paques\cite{auther6}.
+
 
 \bibliography{egbib}
 \end{document}
