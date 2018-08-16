@@ -94,9 +94,24 @@ It needs a lot of time to be familiar with these technological areas without goo
 
 In this paper, an Open Source Software(OSS) project: PythonRobotics\cite{github} is described.
 It aims for beginners of robotics to understand basic ideas of each algorithm.
-It is a code collection of robotics algorithms, especially focusing on autonomous navigation. It is written in Python\cite{python} under MIT license\cite{mit}. 
+It is a code collection of robotics algorithms, especially focusing on autonomous navigation. 
+It is written in Python\cite{python} under MIT license\cite{mit}. 
 
-This paper is organized as follows: Section 2 reviews the related works. The philosophy of this OSS is presented in Section 3. It's repository structure description and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. Section 6 shows acknowledgements for all contributors  in this project. The source code of this project is provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
+This project was started from Mar. 21 2016 as a self-learning project.
+It already has over 3000 stars on GitHub, and the left figure in Fig.\ref{fig:github} shows the star counts history graph using \cite{starhistory}.
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=5.3cm]{images/projectpage.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.6cm]{images/starhistory.png}}}\\
+
+\end{tabular}
+\caption{Left: GitHub star counts history graph using \cite{starhistory}}
+\label{fig:github}
+\end{figure}
+
+This paper is organized as follows: Section 2 reviews the related works. The philosophy of this OSS is presented in Section 3. It's repository structure description and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. Section 6 shows acknowledgements for all contributors  in this project. 
+This is the project page \url{https://atsushisakai.github.io/PythonRobotics/} and it's source code is provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
 
 
 \section{Related works}
@@ -115,11 +130,11 @@ Many universities provide great courses to learn mobile robotics.
 For example, University of Freiburg provides a introduction course of mobile robotics\cite{course1}.
 Swiss Federal Institute of Technology in Zurich (ETH in Zurich) also provides a course of autonomous mobile robot\cite{course2} and robotics programming with Robot Operating System(ROS)\cite{course3}.
 
-These classes of universites also helps readers to learn the autonomous navigation technologies.
+These classes of universities also helps readers to learn the autonomous navigation technologies.
 However, it might be difficult to understand the basic ideas of the technologies and algorithms for beginners of robotics if you are not a student of the class, because these lecture notes doesn't include implementation examples of robotics algorithms.
 
-Robot Operating System (ROS) is a middleware for robotics software development\cite{ros}\cite{rospaper}.
-ROS initially released from 2007, it became a de facto standard platform in many industries fields not only academia.
+Robot Operating System (ROS) is a middle-ware for robotics software development\cite{ros}\cite{rospaper}.
+ROS initially released from 2007, it became a defacto standard platform in many industries fields not only academia.
 ROS includes basic navigation software such as Adaptive Monte Carlo Localization (AMCL package) and local path planner based on dynamic window approach\cite{rosnavigation}.
 Many autonomous navigation ROS packages are also opened as an OSS.
 
@@ -129,7 +144,7 @@ Also, it might be written by complicated programming languages such as C++ for c
 This is not good for focusing to learn robotics algorithms.
 
 Udacity Inc, which is a online learning company founded by S. Thrun, et al, is providing great online courses of autonomous navigation and autonomous driving \cite{udacity}.
-This cource provide not only technical description, programming homework using Python.
+This course provide not only technical description, programming homework using Python.
 The learning strategy is great for understanding it's technical background.
 
 PythonRobotics project has a similar concept to the Udacity's course.
@@ -212,7 +227,7 @@ Simultaneous Localization and Mapping: SLAM is an ability of a robot to estimate
 SLAM problem is hard to solve, because a map is needed for localization and a good localization is needed for mapping, which is a kind of chicken and egg problem.
 Popular SLAM solution methods include the extended Kalman filter, particle filter, and Fast SLAM algorithm\cite{PR}.
 This repository includes some sample codes using these algorithms.
-Fig.\ref{fig:slam} shows SLAM simulation results using extended kalman filter and results using FastSLAM2.0\cite{PR}.
+Fig.\ref{fig:slam} shows SLAM simulation results using Extended Kalman Filter and results using FastSLAM2.0\cite{PR}.
 
 \begin{figure}
 \begin{tabular}{cc}
@@ -281,6 +296,8 @@ Readers can also support this project financially via Patreon\cite{patreon}.
 \section{Acknowledgments}
 
 We appreciate all contributors: Atsushi Sakai\cite{auther6}, Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, Antonin RAFFIN\cite{auther4}, and Alexis Paques\cite{auther6}.
+
+We also appreciate over 3000 robotics lovers who give a star to this repository in GitHub.
 
 
 \bibliography{egbib}
