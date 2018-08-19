@@ -66,14 +66,14 @@
 \maketitle
 
 \begin{abstract}
-This paper describes an Open Source Software(OSS) project: PythonRobotics\cite{github}.
+This paper describes an Open Source Software (OSS) project: PythonRobotics\cite{github}.
 This is a Python code collection of robotics algorithms, especially focusing on autonomous navigation.
-It aims for beginners of robotics to understand basic ideas of each algorithm.
+It aims beginners of robotics to understand basic ideas of each algorithm.
 In this project, the algorithms which are practical and widely used in both academia and industry are selected.
-Each sample code is written by Python3 and only depends some standard modules for readability and easy to use.
+Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use.
 It also provides intuitive animations to understand the behavior of the simulation.
-In this paper, related works of this project, some key ideas about this OSS project, and the brief structure of this repository are introduced.
-Future works of this project are also discussed. 
+%In this paper, related works of this project, some key ideas about this OSS project, and the brief structure of this repository are introduced.
+%Future works of this project are also discussed. 
 
 \end{abstract}
 
@@ -81,22 +81,24 @@ Future works of this project are also discussed.
 \section{Introduction}
 
 In recent years, autonomous navigation technologies have received a huge attention in many fields. 
-For examples, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
-The autonomous system is a system that can operate for long periods of time without any external control by human.
+For example, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
+An autonomous system is a system that can operate for long periods of time without any external control by human.
 
-The autonomous navigation system needs a wide range of technologies.
-It needs to know where am I (localization), where is safe (mapping), where and how to go (path planning), and how to control (path following). 
+% adding difinition of autonomous navigation
+An autonomous navigation system requires a wide range of technologies.
+It needs to know where it is (localization), where it is safe (mapping), where and how to go (path planning), and how to control actuators (path following). 
 The autonomous system would not work correctly if any of these technologies is missing.
 
 Educational materials are becoming more and more important for future developers to learn basic autonomous navigation technologies.
-Because these autonomous technologies needs different technological backgrounds such as linear algebra, statics, probability theory, optimization theory, control theory, and sensing physics etc. 
+Because these autonomous technologies need different technological backgrounds such as linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics etc. 
 It needs a lot of time to be familiar with these technological areas without good educational materials.
+% adding why python robotics is needed
 
 In this paper, an Open Source Software(OSS) project: PythonRobotics\cite{github} is described.
 This project provides a code collection of robotics algorithms, especially focusing on autonomous navigation. 
-It aims for beginners of robotics to understand basic ideas of each algorithm.
+It aims beginners of robotics to understand basic ideas of each algorithm.
 It is written in Python\cite{python} under MIT license\cite{mit}.
-The unique point of this project has a lot of simulation animations that shows behaviors of each algorithm.
+It has a lot of simulation animations that shows behaviors of each algorithm.
 It helps for learners to understand it's fundamental ideas.
 The readers can check the animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
 The left figure in Fig.\ref{fig:github} shows the front image of the page.
@@ -153,7 +155,7 @@ This course provides not only technical lectures, programming homework using Pyt
 It's learning strategy is great for beginners to understand it's technical background.
 
 PythonRobotics project has a similar concept of the Udacity's course.
-It aims for beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm using Python.
+It aims beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm using Python.
 The details of concepts of this OSS project will be described in the next section. 
 
 \begin{figure}
@@ -172,7 +174,7 @@ This project based on three main philosophies.
 
 \subsection{Readability}
 The first one is that the codes have to be easy to read for understanding each algorithm.
-This project aims for beginners of robotics to understand basic ideas of each algorithm. 
+This project aims beginners of robotics to understand basic ideas of each algorithm. 
 Therefore, the code have to be easy to read and understand the algorithm.
 Programming language, Python\cite{python} is adopted in this project because it has good code readability and it allows us to focus on algorithm itself.
 Python has great libraries for matrix operation, mathematical and scientific operation, and visualization.
