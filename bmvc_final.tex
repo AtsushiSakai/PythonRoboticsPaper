@@ -1,6 +1,7 @@
 \documentclass{bmvc2k}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{soul}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -68,7 +69,7 @@
 \def\eg{\emph{e.g}\bmvaOneDot}
 \def\Eg{\emph{E.g}\bmvaOneDot}
 \def\etal{\emph{et al}\bmvaOneDot}
-
+\def\jwd{\textcolor{red}}
 %------------------------------------------------------------------------- 
 % Document starts here
 \begin{document}
@@ -76,12 +77,12 @@
 \maketitle
 
 \begin{abstract}
-This paper describes an Open Source Software (OSS) project: PythonRobotics\cite{github}.
-This is a Python code collection of robotics algorithms, especially focusing on autonomous navigation.
-It aims beginners of robotics to understand basic ideas of each algorithm.
+This paper describes an Open Source Software (OSS) project: PythonRobotics\cite{github}\st{.}\jwd{:}
+\st{This is} a Python code collection of robotics algorithms\st{,}\jwd{.}  \jwd{The focus of the project} 
+\st{especially focusing on} \jwd{is on} autonomous navigation\st{.}\jwd{,}
+\st{It aims beginners of robotics to understand basic ideas of each algorithm.} \jwd{with the principle goal being to provide beginners with the tools necessary to understand it.}
 In this project, the algorithms which are practical and widely used in both academia and industry are selected.
-Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use.
-It also provides intuitive animations to understand the behavior of the simulation.
+Each sample code is written in Python3\jwd{,} \st{and only depends on some standard modules for readability and ease of use} \jwd{has minimal dependencies,}  \st{It also provides} \jwd{and includes} intuitive animations \st{to understand the behavior of the simulation}.
 %In this paper, related works of this project, some key ideas about this OSS project, and the brief structure of this repository are introduced.
 %Future works of this project are also discussed. 
 
@@ -90,26 +91,28 @@ It also provides intuitive animations to understand the behavior of the simulati
 %------------------------------------------------------------------------- 
 \section{Introduction}
 
-In recent years, autonomous navigation technologies have received a huge attention in many fields. 
-For example, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
+In recent years, autonomous navigation technologies have received \st{a} huge attention in many fields. 
+\st{For example,} \jwd{Such fields include:} autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.\jwd{INCLUDE ADDITIONAL REFERENCES IF YOU HAVE THEM}
 
-An autonomous navigation system is a system that can move to a goal for long periods of time without any external control by human.
-The system requires a wide range of technologies.
-It needs to know where it is (localization), where it is safe (mapping), where and how to go (path planning), and how to control actuators (path following). 
+An autonomous navigation system is \st{a system} \jwd{one} that can move \jwd{an object} to a goal\jwd{, potentially} \st{for} \jwd{over} long periods of time\jwd{,} without any external control by \jwd{a} human \jwd{operator}.
+\st{The} \jwd{Such a} system requires a wide range of technologies\st{.} \jwd{:}
+It needs to know where it is (localization), \st{where it is safe}\jwd{have knowledge of its environment} (mapping), \jwd{know} where and how to \st{go}\jwd{move} (path planning), and how to control \jwd{its motion with its} actuators (path following). 
 The autonomous system would not work correctly if any of these technologies is missing.
 
 Educational materials are becoming more and more important for future developers to learn basic autonomous navigation technologies.
-Because these autonomous technologies need different technological backgrounds such as linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics etc. 
-It needs a lot of time to be familiar with these technological areas.
-Therefore, good educational materials for learning basic autonomous navigation technologies are needed.
+\jwd{This is } \st{B}\jwd{b}ecause these \st{autonomous} technologies need different \st{technological}\jwd{technical skillsets} \st{backgrounds}\jwd{.} \st{such as} \jwd{Such skillsets include: }linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics\jwd{,} \st{etc.}\jwd{to name but a few.} 
+\st{It needs a lot of time to be familiar with these technological areas.}\jwd{These skillsets can take a long time to learn, let alone become comfortable with.}
+Therefore, good educational \st{materials}\jwd{resources} for learning basic autonomous navigation technologies are needed.  \jwd{PythonRobotics aims to be one such resource.}
 
+
+\jwd{YOU PROBABLY DON'T WANT TO JUST REPEAT THE ABSTRACT.  THE FOLLOWING PARAGRAPH SHOULD BE REWRITTEN OR REMOVED.}
 In this paper, an Open Source Software(OSS) project: PythonRobotics\cite{github} is described.
 This project provides a code collection of robotics algorithms, especially focusing on autonomous navigation. 
 It aims beginners of robotics to understand basic ideas of each algorithm.
 It is written in Python\cite{python} under MIT license\cite{mit}.
 It has a lot of simulation animations that shows behaviors of each algorithm.
 It helps for learners to understand its fundamental ideas.
-The readers can check the animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
+The readers can \st{check the}\jwd{review} animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
 The left figure in Fig.\ref{fig:github} shows the front image of the page.
 All source codes of this project are provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
 
@@ -126,44 +129,44 @@ It already has over 3000 stars on GitHub, and the right figure in Fig.\ref{fig:g
 \label{fig:github}
 \end{figure}
 
-This paper is organized as follows: Section 2 reviews the related works. The philosophy of this project is presented in Section 3. its repository structure and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. 
-Section 6 shows acknowledgements for all contributors and all supporters. 
+This paper is organized as follows: Section 2 reviews the related works. The philosophy of this project is presented in Section 3. \st{its}\jwd{The} repository structure and some \st{technological}\jwd{technical} backgrounds and simulation results are provided in Section 4. Conclusions \jwd{are drawn} and \st{some future works are drawn}\jwd{thoughts for future work are presented} in Section 5. 
+Section 6 \st{shows acknowledgements for all}\jwd{acknowledges} contributors and \st{all} supporters. 
 
 
 \section{Related works}
 
-There are great educational materials for learning autonomous navigation technologies.
+There are \jwd{already some} great educational materials for learning autonomous navigation technologies.
 
-S. Thrun et al. wrote a great text book "Probabilistic robotics" which is a bible of localization, mapping, Simultaneous Localization And Mapping (SLAM) for mobile robotics\cite{PR}.
-E. Frazzoli et al. wrote a great survey paper about path planning and control techniques for autonomous driving \cite{pathtracking}.
-G. Bautista et al. wrote a survey paper focusing on path planning for automated vehicles\cite{pathplanning}.
-J. Levinson wrote an overview paper about systems and algorithms towards fully autonomous driving\cite{Levinson2011}.
+S. Thrun et al. wrote a great textbook\cite{PR} \st{"Probabilistic robotics"} which is a bible of localization, mapping, \jwd{and} Simultaneous Localization And Mapping (SLAM) for mobile robotics.
+E. Frazzoli et al. wrote a great survey paper\cite{pathtracking} about path planning and control techniques for autonomous driving.
+G. Bautista et al. wrote a survey paper\cite{pathplanning} focusing on path planning for automated vehicles.
+J. Levinson wrote an overview paper\cite{Levinson2011} about systems and algorithms towards fully autonomous driving.
 
-These papers helps readers to learn state of the art autonomous navigation technologies.
-However, it might be difficult for beginners to understand the basic ideas of the technologies and algorithms, because these papers don't include implementation examples.
+These papers help\st{s} readers to learn state\jwd{-}of\jwd{-}the\jwd{-}art autonomous navigation technologies.
+However, it might be difficult for beginners to understand the basic ideas of the technologies and algorithms\st{,} because the\st{se} papers don't include implementation examples.
 
-Many universities provide great classes to learn robotics and share its lecture notes.
-For example, University of Freiburg provides an introduction class of mobile robotics\cite{course1}.
-Swiss Federal Institute of Technology in Zurich (ETH in Zurich) also provides a class of autonomous mobile robot\cite{course2} and robotics programming with Robot Operating System(ROS)\cite{course3}.
+Many universities provide great classes to learn robotics and share \st{its}\jwd{their} lecture notes.
+For example, University of Freiburg provides an introduction class \st{of}\jwd{to} mobile robotics\cite{course1}.
+Swiss Federal Institute of Technology in Zurich (ETH in Zurich) also provides a class \st{of}\jwd{on} autonomous mobile robot\jwd{s}\cite{course2} and robotics programming with Robot Operating System(ROS)\cite{course3}.
 
-These lecture notes also helps readers to learn the autonomous navigation technologies.
-However, it might be also difficult for beginners of robotics to understand the basic ideas of the technologies and algorithms if the reader is not a student of the class, because these lecture notes doesn't include implementation examples of robotics algorithms.
+\jwd{Like the academic literature referenced, } \st{T}\jwd{t}hese lecture notes also help\st{s} readers to learn \st{the} autonomous navigation technologies.
+However, \st{it might be also difficult for beginners of robotics to understand the basic ideas of the technologies and algorithms if the reader is not a student of the class, because these lecture notes doesn't include implementation examples of robotics algorithms.}\jwd{, limited available examples of actual implementation of algorithms discussed might impede a beginner's ability to learn and use the material.}
 
 Robot Operating System (ROS) is a middle-ware for robotics software development\cite{ros}\cite{rospaper}.
-ROS initially released in 2007, it became a defacto standard platform in robotics software development.
-ROS includes basic navigation software such as Adaptive Monte Carlo Localization (AMCL) package and local path planner based on dynamic window approach, etc\cite{rosnavigation}.
-Many autonomous navigation packages using ROS are also opened as an OSS.
+ROS initially released in 2007, \jwd{and} it \st{became a}\jwd{has become the} defacto standard platform in robotics software development.
+ROS includes basic navigation software such as \jwd{the} Adaptive Monte Carlo Localization (AMCL) package and \jwd{the} local path planner based on \jwd{the Dynamic Window Approach}, etc\cite{rosnavigation}.
+Many autonomous navigation packages using ROS are also \st{opened as an OSS}\jwd{open-sourced}.
 
-The ROS packages are also useful to learn autonomous navigation algorithms.
-However, it might has an issue, because of lacking of documentation about its basic algorithm.
-Those packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
+\st{The }ROS packages \st{are}\jwd{can} also \jwd{be} useful to learn autonomous navigation algorithms\st{.}\jwd{,}
+\st{H}\jwd{h}owever, \st{it might has an issue, because of lacking of documentation about its basic algorithm}\jwd{the documentation is inconsistent and, at times, it can be difficult to find implementation details about the algorithms used}.
+\st{Those}\jwd{ROS} packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
 
-Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses of autonomous navigation and autonomous driving \cite{udacity}.
-This course provides not only technical lectures, programming homework using Python.
-its learning strategy is great for beginners to understand its technical background.
+Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses \st{of}\jwd{for} autonomous navigation and autonomous driving \cite{udacity}.
+\st{This}\jwd{These} course\jwd{s} provide\st{s} not only technical lectures, \jwd{but also} programming homework using Python.
+\st{its}\jwd{This leads to a great} learning strategy \st{is great} for beginners to understand \st{its}\jwd{the} technical background \jwd{required for autonomous systems}.
 
-PythonRobotics project has a similar concept of the Udacity's course.
-It aims beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm using Python.
+\jwd{The} PythonRobotics project \jwd{seeks to extend Udacity's approach by giving beginners the necessary tools to understand and make further study into the methods of autonomous navigation.}\st{has a similar concept of the Udacity's course.
+It aims beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm using Python.}
 The details of concepts of this OSS project will be described in the next section. 
 
 \begin{figure}
