@@ -77,11 +77,12 @@
 
 \begin{abstract}
 This paper describes an Open Source Software (OSS) project: PythonRobotics\cite{github}.
-This is a Python code collection of robotics algorithms, especially focusing on autonomous navigation.
+This is a Python code collection of robotics algorithms.
+The focus of the project is on autonomous navigation.
 It aims beginners of robotics to understand basic ideas of each algorithm.
 In this project, the algorithms which are practical and widely used in both academia and industry are selected.
 Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use.
-It also provides intuitive animations to understand the behavior of the simulation.
+It includes intuitive animations to understand the behavior of the simulation.
 %In this paper, related works of this project, some key ideas about this OSS project, and the brief structure of this repository are introduced.
 %Future works of this project are also discussed. 
 
@@ -90,26 +91,27 @@ It also provides intuitive animations to understand the behavior of the simulati
 %------------------------------------------------------------------------- 
 \section{Introduction}
 
-In recent years, autonomous navigation technologies have received a huge attention in many fields. 
-For example, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
+In recent years, autonomous navigation technologies have received huge attention in many fields. 
+Such fields include, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
 
-An autonomous navigation system is a system that can move to a goal for long periods of time without any external control by human.
-The system requires a wide range of technologies.
-It needs to know where it is (localization), where it is safe (mapping), where and how to go (path planning), and how to control actuators (path following). 
+An autonomous navigation system is a system that can move to a goal over long periods of time without any external control by a operator.
+The system requires a wide range of technologies:
+It needs to know where it is (localization), where it is safe (mapping), where and how to move (path planning), and how to control its motion (path following). 
 The autonomous system would not work correctly if any of these technologies is missing.
 
 Educational materials are becoming more and more important for future developers to learn basic autonomous navigation technologies.
-Because these autonomous technologies need different technological backgrounds such as linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics etc. 
+Because these autonomous technologies need different technological skill sets such as: linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics etc. 
 It needs a lot of time to be familiar with these technological areas.
-Therefore, good educational materials for learning basic autonomous navigation technologies are needed.
+Therefore, good educational resources for learning basic autonomous navigation technologies are needed.
+Our project which is described in this paper aims to be one such resource.
 
 In this paper, an Open Source Software(OSS) project: PythonRobotics\cite{github} is described.
 This project provides a code collection of robotics algorithms, especially focusing on autonomous navigation. 
-It aims beginners of robotics to understand basic ideas of each algorithm.
+The principle goal is to provide beginners with the tools necessary to understand it.
 It is written in Python\cite{python} under MIT license\cite{mit}.
 It has a lot of simulation animations that shows behaviors of each algorithm.
 It helps for learners to understand its fundamental ideas.
-The readers can check the animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
+The readers can find the animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
 The left figure in Fig.\ref{fig:github} shows the front image of the page.
 All source codes of this project are provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
 
@@ -126,54 +128,64 @@ It already has over 3000 stars on GitHub, and the right figure in Fig.\ref{fig:g
 \label{fig:github}
 \end{figure}
 
-This paper is organized as follows: Section 2 reviews the related works. The philosophy of this project is presented in Section 3. its repository structure and some technological backgrounds and simulation results are provided in Section 4. Conclusions and some future works are drawn in Section 5. 
-Section 6 shows acknowledgements for all contributors and all supporters. 
+This paper is organized as follows: Section 2 reviews the related works. The philosophy of this project is presented in Section 3.
+The repository structure and some technical backgrounds and simulation results are provided in Section 4.
+Conclusions are drawn and some future works are presented in Section 5. 
+Section 6 acknowledges for contributors and supporters. 
 
 
 \section{Related works}
 
-There are great educational materials for learning autonomous navigation technologies.
+There are already some great educational materials for learning autonomous navigation technologies.
 
-S. Thrun et al. wrote a great text book "Probabilistic robotics" which is a bible of localization, mapping, Simultaneous Localization And Mapping (SLAM) for mobile robotics\cite{PR}.
+S. Thrun et al. wrote a great textbook "Probabilistic robotics" which is a bible of localization, mapping, and Simultaneous Localization And Mapping (SLAM) for mobile robotics\cite{PR}.
 E. Frazzoli et al. wrote a great survey paper about path planning and control techniques for autonomous driving \cite{pathtracking}.
 G. Bautista et al. wrote a survey paper focusing on path planning for automated vehicles\cite{pathplanning}.
 J. Levinson wrote an overview paper about systems and algorithms towards fully autonomous driving\cite{Levinson2011}.
 
-These papers helps readers to learn state of the art autonomous navigation technologies.
-However, it might be difficult for beginners to understand the basic ideas of the technologies and algorithms, because these papers don't include implementation examples.
+These papers help readers to learn state-of-the-art autonomous navigation technologies.
+However, it might be difficult for beginners to understand the basic ideas of the technologies and algorithms because the papers don't include implementation examples.
 
-Many universities provide great classes to learn robotics and share its lecture notes.
-For example, University of Freiburg provides an introduction class of mobile robotics\cite{course1}.
-Swiss Federal Institute of Technology in Zurich (ETH in Zurich) also provides a class of autonomous mobile robot\cite{course2} and robotics programming with Robot Operating System(ROS)\cite{course3}.
+Many universities provide great classes to learn robotics and share their lecture notes.
+For example, University of Freiburg provides an introduction class to mobile robotics\cite{course1}.
+Swiss Federal Institute of Technology in Zurich (ETH in Zurich) also provides a class about autonomous mobile robot\cite{course2} and robotics programming with Robot Operating System(ROS)\cite{course3}.
 
-These lecture notes also helps readers to learn the autonomous navigation technologies.
-However, it might be also difficult for beginners of robotics to understand the basic ideas of the technologies and algorithms if the reader is not a student of the class, because these lecture notes doesn't include implementation examples of robotics algorithms.
+Like the academic literature referenced, these lecture notes also help readers to learn autonomous navigation technologies.
+However, it might be also difficult for beginners of robotics to understand the basic ideas of the technologies and algorithms if the reader is not a student of the class, because these lecture notes doesn't include actual implementation examples of robotics algorithms.
 
 Robot Operating System (ROS) is a middle-ware for robotics software development\cite{ros}\cite{rospaper}.
-ROS initially released in 2007, it became a defacto standard platform in robotics software development.
-ROS includes basic navigation software such as Adaptive Monte Carlo Localization (AMCL) package and local path planner based on dynamic window approach, etc\cite{rosnavigation}.
-Many autonomous navigation packages using ROS are also opened as an OSS.
+ROS initially released in 2007, and it has become the defacto standard platform in robotics software development.
+ROS includes basic navigation software such as the Adaptive Monte Carlo Localization (AMCL) package and the local path planner based on Dynamic Window Approach, etc\cite{rosnavigation}.
+Many autonomous navigation packages using ROS are also open-sourced.
 
-The ROS packages are also useful to learn autonomous navigation algorithms.
-However, it might has an issue, because of lacking of documentation about its basic algorithm.
-Those packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
+ROS packages can also be useful to learn autonomous navigation algorithms, however the documentation is inconsistent and, at times, it can be difficult to find implementation details about the algorithms used.
+ROS packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
 
-Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses of autonomous navigation and autonomous driving \cite{udacity}.
-This course provides not only technical lectures, programming homework using Python.
-its learning strategy is great for beginners to understand its technical background.
+Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses for autonomous navigation and autonomous driving \cite{udacity}.
+These courses provide not only technical lectures, but also programming homework using Python.
+This leads to a great learning strategy for beginners to understand the  technical background required for autonomous systems.
 
-PythonRobotics project has a similar concept of the Udacity's course.
-It aims beginners of robotics to understand basic technical ideas of each autonomous navigation algorithm using Python.
+The PythonRobotics project seeks to extend Udacity's approach by giving beginners the necessary tools to understand and make further study into the methods of autonomous navigation.
 The details of concepts of this OSS project will be described in the next section. 
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=5.9cm]{images/localization1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.2cm]{images/localization2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/localization1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/localization2.png}}}\\
 Histogram filter localization&Particle filter localization
 \end{tabular}
 \caption{Localization simulation results}
 \label{fig:localization}
+\end{figure}
+
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/mapping1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.7cm]{images/mapping2.png}}}\\
+Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
+\end{tabular}
+\caption{Mapping simulation results}
+\label{fig:mapping}
 \end{figure}
 
 \section{Philosophy}
@@ -207,6 +219,15 @@ Each sample code only depends some modules on Python3 as bellow.
 These modules are OSS and could be used for free.
 This repository software doesn't depend on any commercial software.
 
+\begin{figure}
+\begin{tabular}{cc}
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/slam1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/slam2.png}}}\\
+Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
+\end{tabular}
+\caption{SLAM simulation results}
+\label{fig:slam}
+\end{figure}
 
 \section{Repository structure}
 
@@ -231,15 +252,7 @@ Robots have to recognize the position and shape of obstacles to avoid them.
 In mapping, grid mapping and machine learning algorithms are widely used\cite{PR}\cite{PRML}.
 Fig.\ref{fig:mapping} shows mapping simulation results using Grid mapping with 2D ray casting and 2D object clustering with k-means algorithm.
 
-\begin{figure}
-\begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/mapping1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=5.7cm]{images/mapping2.png}}}\\
-Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
-\end{tabular}
-\caption{Mapping simulation results}
-\label{fig:mapping}
-\end{figure}
+
 
 \subsection{SLAM}
 Simultaneous Localization and Mapping (SLAM) is an ability to estimate the pose of a robot and the map of the environment at the same time.
@@ -247,15 +260,7 @@ SLAM problem is hard to solve, because a map is needed for localization and a go
 Popular SLAM solution methods include the extended Kalman filter, particle filter, and Fast SLAM algorithm\cite{PR}.
 Fig.\ref{fig:slam} shows SLAM simulation results using Extended Kalman Filter and results using FastSLAM2.0\cite{PR}.
 
-\begin{figure}
-\begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/slam1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/slam2.png}}}\\
-Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
-\end{tabular}
-\caption{SLAM simulation results}
-\label{fig:slam}
-\end{figure}
+
 
 \subsection{Path planning}
 
@@ -282,8 +287,8 @@ Fig.\ref{fig:pathtracking} shows simulations using rear wheel feedback steering 
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/path_tracking1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.2cm]{images/path_tracking2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/path_tracking1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/path_tracking2.png}}}\\
 Rear wheel feedback steering control \\ and PID speed control \cite{pathtracking}& Iterative linear model predictive control
 \end{tabular}
 \caption{Path tracking simulation results}
@@ -300,8 +305,9 @@ The future works of this project are as followed:
 
 \begin{itemize}
  \item Adding technical and mathematical documentation using Jupyter notebook\cite{JupyterNotebook}.  
- \item Adding simple image processing samples for autonomous navigation only using OpenCV\cite{opencv}.
+ \item Adding image processing samples for autonomous navigation only using OpenCV\cite{opencv}.
  \item Adding simple multi-robots simulations for autonomous navigation.
+ \item Adding a comparison to find which algorithm fits the best for a specific application.
 \end{itemize}
 
 If readers were interested in these future projects, contributions are welcome.
@@ -311,7 +317,6 @@ Readers can also support this project financially via Patreon\cite{patreon}.
 \section{Acknowledgments}
 
 We appreciate all contributors: Atsushi Sakai\cite{auther5}, Daniel Ingram\cite{auther1}, Joe Dinius\cite{auther2}, Karan Chala\cite{auther3}, Antonin RAFFIN\cite{auther4}, and Alexis Paques\cite{auther6}.
-
 We also appreciate all robotics lovers who give a star to this repository in GitHub.
 
 
