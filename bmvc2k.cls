@@ -702,23 +702,23 @@
   \fi}
 
 % hook into the natbib/hyperref citation hooks.
-\ifbmv@extabs\else
-\ifbmv@pdf
-\newbox\bmv@citebox
-\let\hyper@natlinkend=\relax
-\def\hyper@natlinkstart#1{%^
-  \Hy@backout{#1}%^
-  \xdef\bmv@annotation{\NAT@all@names\space\NAT@date}%^
-  \message{BMVC cite \bmv@annotation}%^
+%\ifbmv@extabs\else
+%\ifbmv@pdf
+%\newbox\bmv@citebox
+%\let\hyper@natlinkend=\relax
+%\def\hyper@natlinkstart#1{%^
+%  \Hy@backout{#1}%^
+%  \xdef\bmv@annotation{\NAT@all@names\space\NAT@date}%^
+%  \message{BMVC cite \bmv@annotation}%^
   %\fbox{\bmv@annotation}%^
-  \bmv@annottrue%^
-  \hyper@linkstart{cite}{cite.#1}%^
-  \bmv@annotfalse%^
-  \def\hyper@nat@current{#1}%^
-}
+%  \bmv@annottrue%^
+%  \hyper@linkstart{cite}{cite.#1}%^
+%  \bmv@annotfalse%^
+%  \def\hyper@nat@current{#1}%^
+%}
 
-\def\hyper@natlinkend{%^
-  \Hy@endcolorlink %^
+%\def\hyper@natlinkend{%^
+%  \Hy@endcolorlink %^
 %\pdfendlink
 }
 \fi
