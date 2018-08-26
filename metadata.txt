@@ -1,5 +1,0 @@
-Title:
-PythonRobotics: a Python code collection of robotics algorithms
-
-Authors:
-Atsushi Sakai, Daniel Ingram, Joseph Dinius, Karan Chawla, Antonin Raffin, 
