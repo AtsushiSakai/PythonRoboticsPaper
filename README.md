@@ -7,7 +7,7 @@ This is a brief paper of PythonRobotics: https://github.com/AtsushiSakai/PythonR
 ## Title:
 PythonRobotics: a Python code collection of robotics algorithms
 
-## Authors:
+## authors:
 Atsushi Sakai, Daniel Ingram, Joseph Dinius, Karan Chawla, Antonin Raffin and Alexis Paques.
 
 ## abstruct 
