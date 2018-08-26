@@ -1,6 +1,6 @@
 # PythonRoboticsPaper
 
-![1](https://github.com/AtsushiSakai/PythonRobotics/front_img.png)
+![1](https://github.com/AtsushiSakai/PythonRoboticsPaper/raw/master/front_img.png)
 
 
 This is a introduction paper of PythonRobotics: https://github.com/AtsushiSakai/PythonRobotics .
