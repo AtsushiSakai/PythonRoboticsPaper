@@ -118,8 +118,8 @@ It already has over 3000 stars on GitHub, and the right figure in Fig.\ref{fig:g
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=5.3cm]{images/projectpage.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.6cm]{images/starhistory.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.0cm]{images/projectpage.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.3cm]{images/starhistory.png}}}\\
 
 \end{tabular}
 \caption{Left: PythonRobotics Project page, Right: GitHub star history graph using \cite{starhistory}}
@@ -156,7 +156,7 @@ ROS initially released in 2007, and it has become the defacto standard platform 
 ROS includes basic navigation software such as the Adaptive Monte Carlo Localization (AMCL) package and the local path planner based on Dynamic Window Approach, etc\cite{rosnavigation}.
 Many autonomous navigation packages using ROS are also open-sourced.
 
-ROS packages can also be useful to learn autonomous navigation algorithms, however the documentation is inconsistent and, at times, it can be difficult to find implementation details about the algorithms used.
+ROS packages can also be useful to learn autonomous navigation algorithms, however the documentation is inconsistent and it can be difficult to find implementation details about the algorithms used.
 ROS packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
 
 Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses for autonomous navigation and autonomous driving \cite{udacity}.
@@ -168,8 +168,8 @@ The details of concepts of this OSS project will be described in the next sectio
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/localization1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/localization2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.2cm]{images/localization1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/localization2.png}}}\\
 Histogram filter localization&Particle filter localization
 \end{tabular}
 \caption{Localization simulation results}
@@ -178,8 +178,8 @@ Histogram filter localization&Particle filter localization
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/mapping1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=5.7cm]{images/mapping2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/mapping1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.5cm]{images/mapping2.png}}}\\
 Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
 \end{tabular}
 \caption{Mapping simulation results}
@@ -188,39 +188,41 @@ Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
 
 \section{Philosophy}
 In this section, the philosophy of this project is described.
-It based on three main philosophies.
+The PythonRobotics project is based on three main philosophies.
+Each of which will be discussed separately in this section.
 
 \subsection{Readability}
-The first one is that the code have to be easy to read for understanding each algorithm.
-This project aims beginners of robotics to understand basic ideas of each algorithm. 
-Python\cite{python} programming language is adopted in this project because of its simplicity and it allows us to focus on algorithm itself.
-Python has great libraries for matrix operation, mathematical and scientific operation, and visualization.
-These libraries also allows us to focus on algorithm itself.
+The first philosophy is that the code has to be easy to read.
+If the code is not easy to read, it would be difficult to achieve our goal of allowing beginners to understand the algorithms 
+Python\cite{python} programming language is adopted in this project.
+Python has great libraries for matrix operation, mathematical and scientific operation, and visualization, which makes code more readable because such operations don't need to be re-implemented.
+Having the core Python packages allows the user to focus on the algorithms, rather than the implementations.
 
 \subsection{Practicality}
-The second one is that implemented algorithms have to be practical and widely used in both academia and industry.
+The second philosophy is that implemented algorithms have to be practical and widely used in both academia and industry.
 For example, Kalman filters and particle filter for localization, grid mapping for mapping, dynamic programming based approaches and sampling based approaches for path planning, and optimal control based approach for path tracking.
+These algorithms are implemented in this project.
 
-\subsection{Minimum dependency}
-The last philosophy is minimum dependency.
-It allows us to run code samples easily and to convert the Python codes to other programming languages such as C++, Java for practical usage.
+\subsection{Minimal dependencies}
+The last philosophy is minimal dependencies.
+Having few external dependencies allows us to run code samples easily and to convert the Python codes to other programming languages, such as C++ or Java for more practical application.
 Each sample code only depends some modules on Python3 as bellow.
 
 \begin{itemize}
- \item numpy\cite{numpy} for matrix operation
- \item scipy\cite{scipy} for mathematics, science, and engineering computing
- \item matplotlib\cite{matplotlib} for visualization
- \item pandas\cite{pandas} for data import
+ \item numpy\cite{numpy} for matrix and vector operations
+ \item scipy\cite{scipy} for mathematical, scientific computing
+ \item matplotlib\cite{matplotlib} for plotting and visualization
+ \item pandas\cite{pandas} for data import and manipulation.
  \item cvxpy\cite{cvxpy} for convex optimization
 \end{itemize}
 
-These modules are OSS and could be used for free.
+These modules are OSS and can also be used for free.
 This repository software doesn't depend on any commercial software.
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/slam1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/slam2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.6cm]{images/slam1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=5.6cm]{images/slam2.png}}}\\
 Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
 \end{tabular}
 \caption{SLAM simulation results}
@@ -229,20 +231,17 @@ Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
 
 \section{Repository structure}
 
-In this section, we briefly described the repository structure.
+In this section, the brief repository structure is described.
 
-This repository has five directories which corresponding to five technical categories in autonomous navigation: localization, mapping, SLAM, path planning, and path tracking.
-There is one sub-directory per algorithm, which has a sample code using different algorithms.
-
+There are five directories, each one corresponding to a different technical category in autonomous navigation: localization, mapping, SLAM, path planning, and path tracking.
+There is one sub-directory per algorithm, which has a sample code implementing and testing the algorithm. 
 In the following subsections, some algorithms and some simulation examples in each category are described.
 
 \subsection{Localization}
 
-Localization is the ability of a robot to know its position and orientation with sensors such as GNSS and IMU.
+Localization is the ability of a robot to know its position and orientation with sensors such as Global Navigation Satellite System:GNSS etc.
 In localization, Bayesian filters such as Kalman filters, histogram filter, and particle filter are widely used\cite{PR}.
 Fig.\ref{fig:localization} shows localization simulations using histogram filter and particle filter.
-
-
 
 \subsection{Mapping}
 Mapping is the ability of a robot to understand its surroundings with external sensors such as LIDAR and camera.
@@ -250,20 +249,17 @@ Robots have to recognize the position and shape of obstacles to avoid them.
 In mapping, grid mapping and machine learning algorithms are widely used\cite{PR}\cite{PRML}.
 Fig.\ref{fig:mapping} shows mapping simulation results using Grid mapping with 2D ray casting and 2D object clustering with k-means algorithm.
 
-
-
 \subsection{SLAM}
 Simultaneous Localization and Mapping (SLAM) is an ability to estimate the pose of a robot and the map of the environment at the same time.
-SLAM problem is hard to solve, because a map is needed for localization and a good localization is needed for mapping, which is a kind of chicken and egg problem.
+The SLAM problem is hard to solve, because a map is needed for localization and good localization is needed for mapping.
+In this way, SLAM is often said to be similar to a `chicken-and-egg' problem.
 Popular SLAM solution methods include the extended Kalman filter, particle filter, and Fast SLAM algorithm\cite{PR}.
 Fig.\ref{fig:slam} shows SLAM simulation results using Extended Kalman Filter and results using FastSLAM2.0\cite{PR}.
-
-
 
 \subsection{Path planning}
 
 Path planning is the ability of a robot to search feasible and efficient path to the goal.
-The path have to satisfy some constraints based on movement model and obstacle positions, and optimize some objective functions such as time to goal and distance to obstacle etc.
+The path has to satisfy some constraints based on the robot's motion model and obstacle positions, and optimize some objective functions such as time to goal and distance to obstacle.
 In path planning, dynamic programming based approaches and sampling based approaches are widely used\cite{pathplanning}.
 Fig.\ref{fig:pathplan} shows simulation results of potential field path planning and LQR-RRT* path planning\cite{lqrrrt}.
 
@@ -278,8 +274,9 @@ Potential Field path planning & LQR-RRT* path planning\cite{lqrrrt}
 \end{figure}
 
 \subsection{Path tracking}
-Path tracking is an ability of a robot to follow the reference path generated by path planning algorithms.
-The role of the path tracking controller is to stabilize to the reference path or trajectory which has modeling error and other forms of uncertainty. 
+Path tracking is the ability of a robot to follow the reference path generated by a path planner.
+The role of the path tracking controller is to follow a reference trajectory while simultaneously stabilizing the robot.
+The path tracking controller may need to account for modeling error and other forms of uncertainty. 
 In path tracking, feedback control techniques and optimization based control techniques are widely used\cite{pathplanning}.
 Fig.\ref{fig:pathtracking} shows simulations using rear wheel feedback steering control and PID speed control, and iterative linear model predictive path tracking control\cite{lqrrrt}.
 
@@ -296,19 +293,19 @@ Rear wheel feedback steering control \\ and PID speed control \cite{pathtracking
 %------------------------------------------------------------------------- 
 \section{Conclusion and future work}
 
-In this paper, we introduced PythonRobotics, a code collection of robotics algorithms, with a focus on autonomous navigation. especially for autonomous navigation.
-Related works of this project, some key ideas about this OSS project, and brief structure of this repository and some simulation results were described. 
+In this paper, we introduced PythonRobotics, a code collection of robotics algorithms, with a focus on autonomous navigation.
+Related works of this project, some key ideas about this OSS project, and brief structure of this repository and simulation results were described. 
 
-The future works of this project are as followed: 
+The future work for this project are as follows: 
 
 \begin{itemize}
  \item Adding technical and mathematical documentation using Jupyter notebook\cite{JupyterNotebook}.  
- \item Adding image processing samples for autonomous navigation only using OpenCV\cite{opencv}.
- \item Adding simple multi-robots simulations for autonomous navigation.
- \item Adding a comparison to find which algorithm fits the best for a specific application.
+ \item Adding image processing samples for autonomous navigation using OpenCV\cite{opencv}.
+ \item Adding simple multi-robot simulations for autonomous navigation.
+ \item Adding a comparison to find which algorithm fits best for a specific application.
 \end{itemize}
 
-If readers were interested in these future projects, contributions are welcome.
+If readers are interested in these future projects, contributions are welcome.
 Readers can also support this project financially via Patreon\cite{patreon}.
 
 %------------------------------------------------------------------------
