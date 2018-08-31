@@ -5,7 +5,6 @@
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
-    urlcolor=cyan,
     pdftitle={PythonRobotics: a Python code collection of robotics algorithms},
     bookmarks=true,
     pdfpagemode=FullScreen,
@@ -81,7 +80,6 @@ This is a collection of robotics algorithms implemented in the Python programmin
 The focus of the project is on autonomous navigation, and the goal is for beginners in robotics to understand the basic ideas behind each algorithm.
 In this project, the algorithms which are practical and widely used in both academia and industry are selected.
 Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use.
-Each algorithm is written in Python3 and only depends on some common modules for readability, portability and ease of use.
 It includes intuitive animations to understand the behavior of the simulation.
 
 \end{abstract}
@@ -92,13 +90,13 @@ It includes intuitive animations to understand the behavior of the simulation.
 In recent years, autonomous navigation technologies have received huge attention in many fields. 
 Such fields include, autonomous driving\cite{pathplanning}, drone flight navigation, and other transportation systems.
 
-An autonomous navigation system is a system that can move to a goal over long periods of time without any external control by a operator.
+An autonomous navigation system is a system that can move to a goal over long periods of time without any external control by an operator.
 The system requires a wide range of technologies:
 It needs to know where it is (localization), where it is safe (mapping), where and how to move (path planning), and how to control its motion (path following). 
 The autonomous system would not work correctly if any of these technologies is missing.
 
 Educational materials are becoming more and more important for future developers to learn basic autonomous navigation technologies.
-Because these autonomous technologies need different technological skill sets such as: linear algebra, statistics, probability theory, optimization theory, control theory, and sensing physics etc. 
+Because these autonomous technologies need different technological skill sets such as: linear algebra, statistics, probability theory, optimization theory, and control theory etc. 
 It needs a lot of time to be familiar with these technological areas.
 Therefore, good educational resources for learning basic autonomous navigation technologies are needed.
 Our project which is described in this paper aims to be one such resource.
@@ -110,7 +108,7 @@ It is written in Python\cite{python} under MIT license\cite{mit}.
 It has a lot of simulation animations that shows behaviors of each algorithm.
 It helps for learners to understand its fundamental ideas.
 The readers can find the animations in the project page \url{https://atsushisakai.github.io/PythonRobotics/}.
-The left figure in Fig.\ref{fig:github} shows the front image of the page.
+The left figure in Fig.\ref{fig:github} shows the front image of the project page.
 All source codes of this project are provided at \url{https://github.com/AtsushiSakai/PythonRobotics}.
 
 This project was started from Mar. 21 2016 as a self-learning project.
@@ -156,7 +154,7 @@ ROS initially released in 2007, and it has become the defacto standard platform 
 ROS includes basic navigation software such as the Adaptive Monte Carlo Localization (AMCL) package and the local path planner based on Dynamic Window Approach, etc\cite{rosnavigation}.
 Many autonomous navigation packages using ROS are also open-sourced.
 
-ROS packages can also be useful to learn autonomous navigation algorithms, however the documentation is inconsistent and it can be difficult to find implementation details about the algorithms used.
+ROS packages can also be useful to learn autonomous navigation algorithms, however the documentation might be inconsistent and it can be difficult to find implementation details about the algorithms used.
 ROS packages are usually written in C++ because the focus is computational efficiency and not readability, which makes learning from the code harder.
 
 Udacity Inc, which is an online learning company founded by S. Thrun, et al, is providing great online courses for autonomous navigation and autonomous driving \cite{udacity}.
@@ -168,8 +166,8 @@ The details of concepts of this OSS project will be described in the next sectio
 
 \begin{figure}
 \begin{tabular}{cc}
-\bmvaHangBox{\fbox{\includegraphics[width=5.2cm]{images/localization1.png}}}&
-\bmvaHangBox{\fbox{\includegraphics[width=5.8cm]{images/localization2.png}}}\\
+\bmvaHangBox{\fbox{\includegraphics[width=5.6cm]{images/localization1.png}}}&
+\bmvaHangBox{\fbox{\includegraphics[width=6.0cm]{images/localization2.png}}}\\
 Histogram filter localization&Particle filter localization
 \end{tabular}
 \caption{Localization simulation results}
@@ -189,17 +187,18 @@ Grid mapping with 2D ray casting&2D object clustering with k-means algorithm
 \section{Philosophy}
 In this section, the philosophy of this project is described.
 The PythonRobotics project is based on three main philosophies.
-Each of which will be discussed separately in this section.
+Each philosophy will be discussed separately in this section.
 
 \subsection{Readability}
 The first philosophy is that the code has to be easy to read.
-If the code is not easy to read, it would be difficult to achieve our goal of allowing beginners to understand the algorithms 
+If the code is not easy to read, it would be difficult to achieve our goal of allowing beginners to understand the algorithms. 
 Python\cite{python} programming language is adopted in this project.
 Python has great libraries for matrix operation, mathematical and scientific operation, and visualization, which makes code more readable because such operations don't need to be re-implemented.
 Having the core Python packages allows the user to focus on the algorithms, rather than the implementations.
 
 \subsection{Practicality}
 The second philosophy is that implemented algorithms have to be practical and widely used in both academia and industry.
+We believe learning these algorithms will be useful in many applications.
 For example, Kalman filters and particle filter for localization, grid mapping for mapping, dynamic programming based approaches and sampling based approaches for path planning, and optimal control based approach for path tracking.
 These algorithms are implemented in this project.
 
@@ -223,7 +222,7 @@ This repository software doesn't depend on any commercial software.
 \begin{tabular}{cc}
 \bmvaHangBox{\fbox{\includegraphics[width=5.6cm]{images/slam1.png}}}&
 \bmvaHangBox{\fbox{\includegraphics[width=5.6cm]{images/slam2.png}}}\\
-Extended Kalman Filter based SLAM & FastSLAM 2.0 based SLAM
+Extended Kalman filter based SLAM & FastSLAM 2.0 based SLAM
 \end{tabular}
 \caption{SLAM simulation results}
 \label{fig:slam}
@@ -247,14 +246,14 @@ Fig.\ref{fig:localization} shows localization simulations using histogram filter
 Mapping is the ability of a robot to understand its surroundings with external sensors such as LIDAR and camera.
 Robots have to recognize the position and shape of obstacles to avoid them.
 In mapping, grid mapping and machine learning algorithms are widely used\cite{PR}\cite{PRML}.
-Fig.\ref{fig:mapping} shows mapping simulation results using Grid mapping with 2D ray casting and 2D object clustering with k-means algorithm.
+Fig.\ref{fig:mapping} shows mapping simulation results using grid mapping with 2D ray casting and 2D object clustering with k-means algorithm.
 
 \subsection{SLAM}
 Simultaneous Localization and Mapping (SLAM) is an ability to estimate the pose of a robot and the map of the environment at the same time.
-The SLAM problem is hard to solve, because a map is needed for localization and good localization is needed for mapping.
+The SLAM problem is hard to solve, because a map is needed for localization and localization is needed for mapping.
 In this way, SLAM is often said to be similar to a `chicken-and-egg' problem.
 Popular SLAM solution methods include the extended Kalman filter, particle filter, and Fast SLAM algorithm\cite{PR}.
-Fig.\ref{fig:slam} shows SLAM simulation results using Extended Kalman Filter and results using FastSLAM2.0\cite{PR}.
+Fig.\ref{fig:slam} shows SLAM simulation results using extended Kalman filter and results using FastSLAM2.0\cite{PR}.
 
 \subsection{Path planning}
 
@@ -274,8 +273,7 @@ Potential Field path planning & LQR-RRT* path planning\cite{lqrrrt}
 \end{figure}
 
 \subsection{Path tracking}
-Path tracking is the ability of a robot to follow the reference path generated by a path planner.
-The role of the path tracking controller is to follow a reference trajectory while simultaneously stabilizing the robot.
+Path tracking is the ability of a robot to follow the reference path generated by a path planner while simultaneously stabilizing the robot.
 The path tracking controller may need to account for modeling error and other forms of uncertainty. 
 In path tracking, feedback control techniques and optimization based control techniques are widely used\cite{pathplanning}.
 Fig.\ref{fig:pathtracking} shows simulations using rear wheel feedback steering control and PID speed control, and iterative linear model predictive path tracking control\cite{lqrrrt}.
@@ -295,8 +293,7 @@ Rear wheel feedback steering control \\ and PID speed control \cite{pathtracking
 
 In this paper, we introduced PythonRobotics, a code collection of robotics algorithms, with a focus on autonomous navigation.
 Related works of this project, some key ideas about this OSS project, and brief structure of this repository and simulation results were described. 
-
-The future work for this project are as follows: 
+The future works for this project are as follows: 
 
 \begin{itemize}
  \item Adding technical and mathematical documentation using Jupyter notebook\cite{JupyterNotebook}.  
