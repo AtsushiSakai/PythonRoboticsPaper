@@ -5,6 +5,19 @@
 
 This is an introduction paper of PythonRobotics: https://github.com/AtsushiSakai/PythonRobotics .
 
+# arXiv link 
+
+-[\[1808\.10703\] PythonRobotics: a Python code collection of robotics algorithms](https://arxiv.org/abs/1808.10703)
+
+# bibtex
+
+@misc{1808.10703,
+Author = {Atsushi Sakai and Daniel Ingram and Joseph Dinius and Karan Chawla and Antonin Raffin and Alexis Paques},
+Title = {PythonRobotics: a Python code collection of robotics algorithms},
+Year = {2018},
+Eprint = {arXiv:1808.10703},
+}
+
 
 # Metadata for arXiv
 
